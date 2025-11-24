@@ -1,0 +1,161 @@
+<?xml version="1.0" ?>
+<robot xmlns:xacro="http://www.ros.org/wiki/xacro"> 
+
+    <gazebo reference="chassis">
+        <mu1>1.0</mu1>
+        <mu2>1.0</mu2>
+        <mesh>model://marinero_simulations/robot_description/meshes/MARINERO_chassis_no_driving_assembly.dae</mesh>
+    </gazebo>
+
+    <gazebo reference="fl_wheel">
+        <mu1>3.0</mu1>
+        <mu2>3.0</mu2>
+        <kp>1e10</kp>
+        <kd>10.0</kd>
+        <fdir1>0 0 1</fdir1>
+        <material>Gazebo/Black</material>
+    </gazebo>
+
+    <gazebo reference="fr_wheel">
+        <mu1>3.0</mu1>
+        <mu2>3.0</mu2>
+        <kp>1e10</kp>
+        <kd>10.0</kd>
+        <fdir1>0 0 1</fdir1>
+        <material>Gazebo/Black</material>
+    </gazebo>
+
+    <gazebo reference="rl_wheel">
+        <mu1>3.0</mu1>
+        <mu2>3.0</mu2>
+        <kp>1e10</kp>
+        <kd>10.0</kd>
+        <fdir1>0 0 1</fdir1>
+        <material>Gazebo/Black</material>
+    </gazebo>
+
+    <gazebo reference="rr_wheel">
+        <mu1>3.0</mu1>
+        <mu2>3.0</mu2>
+        <kp>1e10</kp>
+        <kd>10.0</kd>
+        <fdir1>0 0 1</fdir1>
+        <material>Gazebo/Black</material>
+    </gazebo>
+
+    <gazebo reference="fl_axle_link">
+        <mu1>1.0</mu1>
+        <mu2>1.0</mu2>
+        <kp>1e10</kp>
+        <kd>10.0</kd>
+        <material>Gazebo/DarkGrey</material>
+    </gazebo>
+
+    <gazebo reference="fr_axle_link">
+        <mu1>1.0</mu1>
+        <mu2>1.0</mu2>
+        <kp>1e10</kp>
+        <kd>10.0</kd>
+        <material>Gazebo/DarkGrey</material>
+    </gazebo>
+
+    <gazebo reference="rl_axle_link">
+        <mu1>1.0</mu1>
+        <mu2>1.0</mu2>
+        <kp>1e10</kp>
+        <kd>10.0</kd>
+        <material>Gazebo/DarkGrey</material>
+    </gazebo>
+
+    <gazebo reference="rr_axle_link">
+        <mu1>1.0</mu1>
+        <mu2>1.0</mu2>
+        <kp>1e10</kp>
+        <kd>10.0</kd>
+        <material>Gazebo/DarkGrey</material>
+    </gazebo>
+
+    <gazebo reference="camera_base">
+        <mu1>2.0</mu1>
+        <mu2>2.0</mu2>
+        <kp>5e10</kp>
+        <kd>10.0</kd>
+        <material>Gazebo/DarkGrey</material>
+    </gazebo>
+
+    <gazebo reference="left_camera_link">
+        <material>Gazebo/Grey</material>
+    </gazebo>
+
+    <gazebo reference="right_camera_link">
+        <material>Gazebo/Grey</material>
+    </gazebo>
+
+    <gazebo reference="lidar_link">
+        <material>Gazebo/Grey</material>
+    </gazebo>
+
+
+    <gazebo>
+        <plugin name="skid_steer_drive" filename="libgazebo_ros_diff_drive.so">
+
+            <!-- Update rate -->
+            <update_rate>100</update_rate>
+
+            <!-- Number of wheel pairs -->
+            <num_wheel_pairs>2</num_wheel_pairs>
+
+            <!-- Front wheels -->
+            <left_joint>fl_wheel_joint</left_joint>
+            <right_joint>fr_wheel_joint</right_joint>
+
+            <!-- Rear wheels -->
+            <left_joint>rl_wheel_joint</left_joint>
+            <right_joint>rr_wheel_joint</right_joint>
+
+            <wheel_separation>0.425</wheel_separation>
+            <wheel_separation>0.425</wheel_separation>
+
+            <wheel_diameter>0.2032</wheel_diameter>
+            <wheel_diameter>0.2032</wheel_diameter>
+
+            <!-- limits -->
+            <max_wheel_torque>100.0</max_wheel_torque>
+            <max_wheel_acceleration>7.0</max_wheel_acceleration>
+
+            <!-- output -->
+            <publish_odom>true</publish_odom>
+            <publish_odom_tf>true</publish_odom_tf>
+            <publish_wheel_tf>true</publish_wheel_tf>
+
+            <odometry_frame>odom</odometry_frame>
+            <robot_base_frame>base_link</robot_base_frame>
+
+            <ros>
+                <remapping>/odom:=/marinero/odom</remapping>
+            </ros>
+
+            <covariance_x>0.001</covariance_x>
+            <covariance_y>0.001</covariance_y>
+            <covariance_yaw>0.01</covariance_yaw>
+        </plugin>
+    </gazebo>
+
+    <gazebo>
+        <plugin name="gazebo_ros_joint_state_publisher" 
+            filename="libgazebo_ros_joint_state_publisher.so">
+            <update_rate>100</update_rate>
+            <joint_name>camera_base_joint</joint_name>
+            <joint_name>left_camera_joint</joint_name>
+            <joint_name>right_camera_joint</joint_name>
+        </plugin>
+    </gazebo>
+
+    <gazebo>
+        <plugin name="gazebo_ros_joint_pose_trajectory" 
+            filename="libgazebo_ros_joint_pose_trajectory.so">
+            <update_rate>100</update_rate>
+        </plugin>
+    </gazebo>
+
+</robot>

@@ -1,0 +1,11 @@
+robot_description/meshes/MARINERO_chassis.dae
+robot_description/meshes/MARINERO_chassis_06_11.zip
+robot_description/old_model_robot_description.zip
+# robot_description/old_model_robot_description
+models/zona_A_ormarici/meshes/
+models/zona_B_ormarici/meshes/
+models/zona_C_ormarici/meshes/
+models/ormarici_MarinaPunat.zip
+.vscode/
+build/
+log/

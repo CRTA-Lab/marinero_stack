@@ -1,0 +1,383 @@
+<?xml version="1.0"?>
+<robot xmlns:xacro="http://www.ros.org/wiki/xacro">
+    
+    <link name="base_link"></link>
+
+    <joint name="base_footprint_joint" type="fixed">
+        <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0"/>
+        <parent link="base_link"/>
+        <child link="base_footprint"/>
+    </joint>
+
+    <link name="base_footprint"></link>
+
+    <joint name="chassis_joint" type="fixed">
+        <origin xyz="0.0 0.0 0.237" rpy="0 0 0"/>
+        <parent link="base_link" />
+        <child link="chassis" />
+    </joint>
+
+    <link name="chassis">
+        <visual>
+            <origin xyz="0.0 0.0 0.0" />
+            <geometry>
+                <mesh filename="package://marinero_simulations/robot_description/meshes/MARINERO_chassis_FINAL.dae" scale="1.0 1.0 1.0" />
+            </geometry>
+        </visual>
+
+        <collision>
+            <origin xyz="0.0 0.0 0.0915" />
+            <geometry>
+                <box size="1.025 0.65 0.185"/>
+            </geometry>
+        </collision>
+        <collision>
+            <origin xyz="0.0 0.0 0.358"/>
+            <geometry>
+                    <box size="0.5 0.215 0.350"/>
+            </geometry>
+        </collision>
+        <collision>
+            <origin xyz="0.330 0.0 0.25" rpy="0 0 0"/>
+            <geometry>
+                    <box size="0.125 0.5 0.132"/>
+            </geometry>
+        </collision>
+
+        <!-- <xacro:inertial_box mass="40.254" x="0.6655" y="1.075" z="0.2">
+            <origin xyz="0 0 0.1" rpy="0.0 0.0 0.0" />
+        </xacro:inertial_box> -->
+        
+        <inertial>
+            <mass value="40.0" />
+            <origin xyz="0.01906 -0.00077 0.13293" />     
+            <inertia ixx="3.3132" ixy="0.00935" ixz="-0.0373"
+                    iyx="0.00935" iyy="5.232" iyz="-0.01586"
+                    izx="-0.0373" izy="-0.01586" izz="4.562" />
+        </inertial>
+    </link>
+
+
+    
+    <!-- FRONT LEFT WHEEL -->
+
+    <joint name="fl_rotation_joint" type="fixed">
+        <origin xyz="0.35 0.225 ${wheel_radius + 0.132}" rpy="0 0 0"/>
+        <parent link="base_link" />
+        <child link="fl_axle_link" />
+    </joint>
+
+    <link name="fl_axle_link">
+        <visual>
+            <origin xyz="0 0 0" rpy="0 0 0"/>
+            <geometry>
+                <mesh filename="package://marinero_simulations/robot_description/meshes/Wheel_Assembly_FINAL.dae" scale="1.0 1.0 1.0" />
+            </geometry>
+        </visual>
+
+        <collision>
+            <origin xyz="0.0 0.0 -0.01" rpy="0 0 0"/>
+            <geometry>
+                    <box size="0.112 0.115 0.02"/>
+            </geometry>
+        </collision>
+        <collision>
+            <origin xyz="0.0 0.0465 -0.08" rpy="0 0 0"/>
+            <geometry>
+                    <box size="0.115 0.025 0.12"/>
+            </geometry>
+        </collision>
+        <collision>
+            <origin xyz="0.0 -0.0465 -0.08" rpy="0 0 0"/>
+            <geometry>
+                    <box size="0.115 0.025 0.12"/>
+            </geometry>
+        </collision>
+
+        <inertial>
+            <origin xyz="0.0 0.0 -0.04412" rpy="0.0 0.0 0.0" />
+            <mass value="2.5" />     
+            <inertia ixx="0.01468" ixy="0.0" ixz="0.0"
+                    iyx="0.0" iyy="0.01245" iyz="0.0"
+                    izx="0.0" izy="0.0" izz="0.00671" />
+        </inertial>
+    </link>
+
+
+    <joint name="fl_wheel_joint" type="continuous">
+        <origin xyz="0 0 -0.132" rpy="-${pi/2} 0 0"/>
+        <parent link="fl_axle_link" />
+        <child link="fl_wheel" />
+        <axis xyz="0 0 1" />
+        <dynamics damping="0.1"/>
+        <limit effort="50" velocity="20"/>
+    </joint>
+
+    <link name="fl_wheel">
+        <visual>
+            <origin xyz="0 0 0" rpy="0 0 0"/>
+            <geometry>
+                <mesh filename="package://marinero_simulations/robot_description/meshes/Wheel_FINAL.dae" scale="1.0 1.0 1.0" />
+            </geometry>
+        </visual>
+
+        <collision>
+            <origin xyz="0 0 0" rpy="0 0 0"/>
+            <geometry>
+                <!-- <cylinder radius="${wheel_radius}" length="${wheel_length}"/> -->
+                <sphere radius="${wheel_radius}"/>
+            </geometry>
+        </collision>
+
+        <inertial>
+            <mass value="1.469" />
+            <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0" />
+            <inertia ixx="0.003638" ixy="0.0" ixz="0.0"
+                    iyx="0.0" iyy="0.00364" iyz="0.0"
+                    izx="0.0" izy="0.0" izz="0.006634" />
+        </inertial>
+    </link>
+
+
+<!-- FRONT RIGHT WHEEL -->
+
+    <joint name="fr_rotation_joint" type="fixed">
+        <origin xyz="0.35 -0.225 ${wheel_radius + 0.132}" rpy="0 0 0" />
+        <parent link="base_link" />
+        <child link="fr_axle_link" />
+    </joint>
+
+    <link name="fr_axle_link">
+        <visual>
+            <origin xyz="0 0 0" rpy="0 0 0"/>
+            <geometry>
+                <mesh filename="package://marinero_simulations/robot_description/meshes/Wheel_Assembly_FINAL.dae" scale="1.0 1.0 1.0" />
+            </geometry>
+        </visual>
+
+        <collision>
+            <origin xyz="0.0 0.0 -0.01" rpy="0 0 0"/>
+            <geometry>
+                    <box size="0.112 0.115 0.02"/>
+            </geometry>
+        </collision>
+        <collision>
+            <origin xyz="0.0 0.0465 -0.08" rpy="0 0 0"/>
+            <geometry>
+                    <box size="0.115 0.025 0.12"/>
+            </geometry>
+        </collision>
+        <collision>
+            <origin xyz="0.0 -0.0465 -0.08" rpy="0 0 0"/>
+            <geometry>
+                    <box size="0.115 0.025 0.12"/>
+            </geometry>
+        </collision>
+
+        <inertial>
+            <origin xyz="0.0 0.0 -0.04412" rpy="0.0 0.0 0.0" />
+            <mass value="2.5" />     
+            <inertia ixx="0.01468" ixy="0.0" ixz="0.0"
+                    iyx="0.0" iyy="0.01245" iyz="0.0"
+                    izx="0.0" izy="0.0" izz="0.00671" />
+        </inertial>
+    </link>
+
+
+    <joint name="fr_wheel_joint" type="continuous">
+        <origin xyz="0 0 -0.132" rpy="${pi/2} 0 0"/>
+        <parent link="fr_axle_link" />
+        <child link="fr_wheel" />
+        <axis xyz="0 0 -1" />
+        <dynamics damping="0.1"/>
+        <limit effort="50" velocity="20"/>
+    </joint>
+
+    <link name="fr_wheel">
+        <visual>
+            <origin xyz="0 0 0" rpy="0 0 0"/>
+            <geometry>
+                <mesh filename="package://marinero_simulations/robot_description/meshes/Wheel_FINAL.dae" scale="1.0 1.0 1.0" />
+            </geometry>
+        </visual>
+
+        <collision>
+            <origin xyz="0 0 0" rpy="0 0 0"/>
+            <geometry>
+                <!-- <cylinder radius="${wheel_radius}" length="${wheel_length}"/> -->
+                <sphere radius="${wheel_radius}"/>
+            </geometry>
+        </collision>
+
+        <inertial>
+            <mass value="1.469" />
+            <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0" />
+            <inertia ixx="0.003638" ixy="0.0" ixz="0.0"
+                    iyx="0.0" iyy="0.00364" iyz="0.0"
+                    izx="0.0" izy="0.0" izz="0.006634" />
+        </inertial>
+    </link>
+
+
+
+    <!-- REAR LEFT WHEEL -->
+
+    <joint name="rl_rotation_joint" type="fixed">
+        <origin xyz="-0.35 0.225 ${wheel_radius + 0.132}" rpy="0 0 0"/>
+        <parent link="base_link" />
+        <child link="rl_axle_link" />
+    </joint>
+
+    <link name="rl_axle_link">
+        <visual>
+            <origin xyz="0 0 0" rpy="0 0 0"/>
+            <geometry>
+                <mesh filename="package://marinero_simulations/robot_description/meshes/Wheel_Assembly_FINAL.dae"  scale="1.0 1.0 1.0" />
+            </geometry>
+        </visual>
+
+        <collision>
+            <origin xyz="0.0 0.0 -0.01" rpy="0 0 0"/>
+            <geometry>
+                    <box size="0.112 0.115 0.02"/>
+            </geometry>
+        </collision>
+        <collision>
+            <origin xyz="0.0 0.0465 -0.08" rpy="0 0 0"/>
+            <geometry>
+                    <box size="0.115 0.025 0.12"/>
+            </geometry>
+        </collision>
+        <collision>
+            <origin xyz="0.0 -0.0465 -0.08" rpy="0 0 0"/>
+            <geometry>
+                    <box size="0.115 0.025 0.12"/>
+            </geometry>
+        </collision>
+
+        <inertial>
+            <origin xyz="0.0 0.0 -0.04412" rpy="0.0 0.0 0.0" />
+            <mass value="2.5" />     
+            <inertia ixx="0.01468" ixy="0.0" ixz="0.0"
+                    iyx="0.0" iyy="0.01245" iyz="0.0"
+                    izx="0.0" izy="0.0" izz="0.00671" />
+        </inertial>
+    </link>
+
+
+    <joint name="rl_wheel_joint" type="continuous">
+        <origin xyz="0 0 -0.132" rpy="-${pi/2} 0 0"/>
+        <parent link="rl_axle_link" />
+        <child link="rl_wheel" />
+        <axis xyz="0 0 1" />
+        <dynamics damping="0.1"/>
+        <limit effort="50" velocity="20"/>
+    </joint>
+
+    <link name="rl_wheel">
+        <visual>
+            <origin xyz="0 0 0" rpy="0 0 0"/>
+            <geometry>
+                <mesh filename="package://marinero_simulations/robot_description/meshes/Wheel_FINAL.dae" scale="1.0 1.0 1.0" />
+            </geometry>
+        </visual>
+
+        <collision>
+            <origin xyz="0 0 0" rpy="0 0 0"/>
+            <geometry>
+                <!-- <cylinder radius="${wheel_radius}" length="${wheel_length}"/> -->
+                <sphere radius="${wheel_radius}"/>
+            </geometry>
+        </collision>
+
+        <inertial>
+            <mass value="1.469" />
+            <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0" />
+            <inertia ixx="0.003638" ixy="0.0" ixz="0.0"
+                    iyx="0.0" iyy="0.00364" iyz="0.0"
+                    izx="0.0" izy="0.0" izz="0.006634" />
+        </inertial>
+    </link>
+
+
+
+    <!-- REAR RIGHT WHEEL -->
+
+    <joint name="rr_rotation_joint" type="fixed">
+        <origin xyz="-0.35 -0.225 ${wheel_radius + 0.132}" rpy="0 0 0" />
+        <parent link="base_link" />
+        <child link="rr_axle_link" />
+        <axis xyz="0 0 -1" />
+    </joint>
+
+    <link name="rr_axle_link">
+        <visual>
+            <origin xyz="0 0 0" rpy="0 0 0"/>
+            <geometry>
+                <mesh filename="package://marinero_simulations/robot_description/meshes/Wheel_Assembly_FINAL.dae"  scale="1.0 1.0 1.0" />
+            </geometry>
+        </visual>
+
+        <collision>
+            <origin xyz="0.0 0.0 -0.01" rpy="0 0 0"/>
+            <geometry>
+                    <box size="0.112 0.115 0.02"/>
+            </geometry>
+        </collision>
+        <collision>
+            <origin xyz="0.0 0.0465 -0.08" rpy="0 0 0"/>
+            <geometry>
+                    <box size="0.115 0.025 0.12"/>
+            </geometry>
+        </collision>
+        <collision>
+            <origin xyz="0.0 -0.0465 -0.08" rpy="0 0 0"/>
+            <geometry>
+                    <box size="0.115 0.025 0.12"/>
+            </geometry>
+        </collision>
+
+        <inertial>
+            <origin xyz="0.0 0.0 -0.04412" rpy="0.0 0.0 0.0" />
+            <mass value="2.5" />     
+            <inertia ixx="0.01468" ixy="0.0" ixz="0.0"
+                    iyx="0.0" iyy="0.01245" iyz="0.0"
+                    izx="0.0" izy="0.0" izz="0.00671" />
+        </inertial>
+    </link>
+
+    <joint name="rr_wheel_joint" type="continuous">
+        <origin xyz="0 0 -0.132" rpy="${pi/2} 0 0" />
+        <parent link="rr_axle_link" />
+        <child link="rr_wheel" />
+        <axis xyz="0 0 -1" />
+        <dynamics damping="0.1"/>
+        <limit effort="50" velocity="20"/>
+    </joint>
+
+    <link name="rr_wheel">
+        <visual>
+            <origin xyz="0 0 0" rpy="0 0 0"/>
+            <geometry>
+                <mesh filename="package://marinero_simulations/robot_description/meshes/Wheel_FINAL.dae" scale="1.0 1.0 1.0" />
+            </geometry>
+        </visual>
+
+        <collision>
+            <origin xyz="0 0 0" rpy="0 0 0"/>
+            <geometry>
+                <!-- <cylinder radius="${wheel_radius}" length="${wheel_length}"/> -->
+                <sphere radius="${wheel_radius}"/>
+            </geometry>
+        </collision>
+
+        <inertial>
+            <mass value="1.469" />
+            <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0" />
+            <inertia ixx="0.003638" ixy="0.0" ixz="0.0"
+                    iyx="0.0" iyy="0.00364" iyz="0.0"
+                    izx="0.0" izy="0.0" izz="0.006634" />
+        </inertial>
+    </link>
+
+</robot>

@@ -1,0 +1,104 @@
+<?xml version="1.0"?>
+<robot xmlns:xacro="http://www.ros.org/wiki/xacro" name="camera">
+
+    <xacro:property name="d435_cam_depth_to_left_ir_offset" value="0.015"/>
+    <xacro:property name="d435_cam_depth_to_right_ir_offset" value="0.050"/>
+    <xacro:property name="d435_cam_depth_to_projector_offset" value="0.029"/>
+    <xacro:property name="d435_cam_depth_to_color_offset" value="0.015"/>
+    <xacro:property name="d435_cam_depth_to_centerline" value="0.0325"/> 
+
+    <xacro:property name="camera_width" value="0.090" />
+    <xacro:property name="camera_height" value="0.025" />
+    <xacro:property name="camera_depth" value="0.02505" />
+
+    <xacro:property name="d435_cam_depth_px" value="0.0149"/>
+    <xacro:property name="d435_cam_depth_py" value="0.0175"/> 
+    <xacro:property name="d435_cam_depth_pz" value="${d435_cam_height/2}"/>
+
+    <joint name="camera_joint" type="fixed">
+        <origin xyz="0.5 0.0 0.1" rpy="0 0 0" />
+        <parent link="chassis" />
+        <child link="camera_link" />
+    </joint>
+
+    <link name="camera_link">
+        <visual>
+            <origin xyz="${camera_depth} 0 0" rpy="${pi/2} 0 ${pi/2}"/>
+            <geometry>
+                <mesh filename="file:///home/albert/marinero_ws/src/marinero_simulations/robot_description/meshes/d435.dae"/>
+            </geometry>
+        </visual>
+        <collision>
+            <origin xyz="${camera_depth/2} 0.0 0.0"/>
+            <geometry>
+                <box size="${camera_depth} ${camera_width} ${camera_height}"/>
+            </geometry>
+        </collision>
+        <xacro:inertial_box mass="0.1" x="${camera_depth}" y="${camera_width}" z="${camera_height}">
+            <origin xyz="${camera_depth} 0 0" rpy="0 0 0" />
+        </xacro:inertial_box>
+    </link>
+
+    <joint name="camera_depth_joint" type="fixed">
+        <origin xyz="${camera_depth} 0 0" rpy="${-pi/2} 0 ${-pi/2}"/>
+        <parent link="camera_link"/>
+        <child link="camera_depth_frame"/>
+    </joint>
+
+    <link name="camera_depth_frame"></link>
+
+    <gazebo reference="camera_link">
+        <sensor name="depth_camera" type="depth">
+            <update_rate>10</update_rate>
+            <visualize>true</visualize>
+            <camera name="dep_cam">
+                <horizontal_fov>1.089</horizontal_fov>
+                <image>
+                    <width>640</width>
+                    <height>480</height>
+                    <format>B8G8R8</format>
+                </image>
+                <clip>
+                    <near>0.05</near>
+                    <far>100.0</far>
+                </clip>
+            </camera>
+            <plugin name="camera_controller" filename="libgazebo_ros_camera.so">
+                <frame_name>camera_depth_frame</frame_name>
+                <min_depth>0.1</min_depth>
+                <max_depth>100.0</max_depth>
+            </plugin>
+        </sensor>
+    </gazebo>
+
+    <joint name="camera_color_joint" type="fixed">
+        <origin xyz="${camera_depth} ${d435_cam_depth_to_color_offset} 0" rpy="${-pi/2} 0 ${-pi/2}"/>
+        <parent link="camera_link"/>
+        <child link="camera_color_frame"/>
+    </joint>
+
+    <link name="camera_color_frame"></link>
+
+    <!-- <gazebo reference="camera_link">
+        <sensor name="camera" type="camera">
+            <update_rate>10</update_rate>
+            <visualize>true</visualize>
+            <camera name="cam">
+                <horizontal_fov>1.089</horizontal_fov>
+                <image>
+                    <width>640</width>
+                    <height>480</height>
+                    <format>BGR8</format>
+                </image>
+                <clip>
+                    <near>0.05</near>
+                    <far>8.0</far>
+                </clip>
+            </camera>
+            <plugin name="camera_controller" filename="libgazebo_ros_camera.so">
+                <frame_name>camera_color_frame</frame_name>
+            </plugin>
+        </sensor>
+    </gazebo> -->
+
+</robot>

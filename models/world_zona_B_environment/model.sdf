@@ -1,0 +1,133 @@
+<?xml version='1.0'?>
+<sdf version='1.7'>
+  <model name='world_zona_B_environment'>
+    <static>true</static>
+    <pose>0 0 0 0 0 0</pose>
+
+    <include>
+      <uri>/marinero_simulations/models/Marina_Zona_B</uri>
+      <pose>94.318800 292.840000 0.08 0 0 0</pose>
+    </include>
+
+    <include>
+      <uri>/marinero_simulations/models/sea_plane_B1</uri>
+      <pose>21.285 475.0 0 0 0 0.0004</pose>
+    </include>
+
+    <include>
+      <uri>/marinero_simulations/models/sea_plane_B2</uri>
+      <pose>-6.139 285.0 0 0 0 0.0004</pose>
+    </include>
+
+    <include>
+      <uri>/marinero_simulations/models/asphalt_plane_zone_B</uri>
+      <pose>96.130478 307.399536 0 0 0 0</pose>
+    </include>
+
+    <include>
+      <uri>/marinero_simulations/models/asphalt_plane_XS</uri>
+      <pose>106.578583 301.612610 0 0 0 0</pose>
+    </include>
+
+
+
+    <include>
+      <uri>/marinero_simulations/models/grass_plane_XS</uri>
+      <name>grass_0</name>
+      <pose>143.796000 583.12000 0 0 0 0</pose>
+    </include>
+
+    <include>
+      <uri>/marinero_simulations/models/grass_plane_SM</uri>
+      <name>grass_1</name>
+      <pose>143.811325 567.149231 0 0 0 0</pose>
+    </include>
+
+    <include>
+      <uri>/marinero_simulations/models/grass_plane_S</uri>
+      <name>grass_2</name>
+      <pose>143.703766 561.695679 0 0 0 0</pose>
+    </include>
+
+    <include>
+      <uri>/marinero_simulations/models/grass_plane_SM</uri>
+      <name>grass_3</name>
+      <pose>143.624954 547.390930 0 0 0 0</pose>
+    </include>
+
+    <include>
+      <uri>/marinero_simulations/models/grass_plane_SM</uri>
+      <name>grass_4</name>
+      <pose>143.477814 539.911926 0 0 0 0</pose>
+    </include>
+
+    <include>
+      <uri>/marinero_simulations/models/grass_plane_M</uri>
+      <name>grass_5</name>
+      <pose>143.148788 523.226013 0 0 0 0</pose>
+    </include>
+
+    <include>
+      <uri>model://grass_plane</uri>
+      <name>grass_6</name>
+      <pose>142.555176 487.275604 0 0 0 0</pose>
+    </include>
+
+    <include>
+      <uri>/marinero_simulations/models/grass_plane_SM</uri>
+      <name>grass_7</name>
+      <pose>142.064011 466.055359 0 0 0 -0.018462</pose>
+    </include>
+
+    <include>
+      <uri>/marinero_simulations/models/grass_plane_S</uri>
+      <name>grass_8</name>
+      <pose>141.874283 459.836212 0 0 0 0</pose>
+    </include>
+
+    <include>
+      <uri>model://grass_plane</uri>
+      <name>grass_9</name>
+      <pose>141.559189 435.483673 0 0 0 0</pose>
+    </include>
+
+    <include>
+      <uri>/marinero_simulations/models/grass_plane_SM</uri>
+      <name>grass_10</name>
+      <pose>141.136093 414.013672 0 0 0 0</pose>
+    </include>
+
+    <include>
+      <uri>model://grass_plane</uri>
+      <name>grass_11</name>
+      <pose>140.760880 386.513733 0 0 0 0</pose>
+    </include>
+
+    <include>
+      <uri>/marinero_simulations/models/grass_plane_S</uri>
+      <name>grass_12</name>
+      <pose>140.415421 369.034607 0 0 0 0</pose>
+    </include>
+
+    <include>
+      <uri>/marinero_simulations/models/grass_plane_L</uri>
+      <name>grass_13</name>
+      <pose>140.158173 347.402802 0 0 0 -0.008000</pose>
+    </include>
+
+    <include>
+      <uri>/marinero_simulations/models/grass_plane_XS</uri>
+      <name>grass_14</name>
+      <pose>131.264 322.973 0 0 0 -1.478720</pose>
+    </include>
+
+    <include>
+      <uri>/marinero_simulations/models/grass_plane_XS</uri>
+      <name>grass_15</name>
+      <pose>127.521 322.702 0 0 0 -1.478720</pose>
+    </include>
+
+  </model>
+</sdf>
+
+

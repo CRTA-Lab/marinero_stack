@@ -1,0 +1,18 @@
+<?xml version='1.0'?>
+<sdf version='1.7'>
+  <model name='world_zona_C_environment'>
+    <static>true</static>
+    <pose>0 0 0 0 0 0</pose>
+
+    <include>
+      <uri>/marinero_simulations/models/Marina_Zona_C</uri>
+      <pose>140.340000 587.600000 0.08 0 0 0</pose>
+    </include>
+
+    <include>
+      <uri>/marinero_simulations/models/sea_plane_C</uri>
+      <pose>31.2865 682.602 0 0 0 -0.0005</pose>
+    </include>
+
+  </model>
+</sdf>

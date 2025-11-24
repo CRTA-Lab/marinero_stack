@@ -1,0 +1,135 @@
+<?xml version="1.0"?>
+<robot xmlns:xacro="http://www.ros.org/wiki/xacro">
+
+    <xacro:property name="lidar_length" value="0.05" />
+    <xacro:property name="lidar_radius" value="0.05" />
+
+    <joint name="lidar_joint" type="fixed">
+        <origin xyz="0.45 0 0.453" rpy="0 0 0 " />
+        <parent link="base_link"/>
+        <child link="lidar_link"/>
+    </joint>
+
+    <link name="lidar_link">
+        <visual>
+            <origin xyz="0 0 -0.025" />
+            <geometry>
+                <cylinder radius="${lidar_radius}" length="${lidar_length}"/>
+            </geometry>
+            <material name="dark" />
+        </visual>
+
+        <visual>
+            <origin xyz="0 0 0" />
+            <geometry>
+                <sphere radius="${lidar_radius - 0.01}"/>
+            </geometry>
+            <material name="dark" />
+        </visual>
+
+        <collision>
+            <origin xyz="0 0 0" />
+            <geometry>
+                <cylinder radius="${lidar_radius*1.15}" length="${lidar_length*2}"/>
+            </geometry>
+        </collision>
+
+        <xacro:inertial_cylinder mass="0.1" length="${lidar_length}" radius="${lidar_radius}">
+            <origin xyz="0 0 -0.025" rpy="0 0 0" />
+        </xacro:inertial_cylinder>
+
+        <xacro:inertial_sphere mass="0.05" radius="${lidar_radius - 0.01}">
+            <origin xyz="0 0 0" rpy="0 0 0" />
+        </xacro:inertial_sphere>
+    </link>
+
+    <joint name="lidar_2D_joint" type="fixed">
+        <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0"/>
+        <parent link="lidar_link"/>
+        <child link="lidar_2D_link"/>
+    </joint>
+
+    <link name="lidar_2D_link"></link>
+
+    <joint name="lidar_3D_joint" type="fixed">
+        <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0"/>   
+        <parent link="lidar_link"/>
+        <child link="lidar_3D_link"/>
+    </joint>
+
+    <link name="lidar_3D_link"></link>
+
+
+    <!-- 3D LIDAR -->
+
+    <gazebo reference="lidar_3D_link">
+        <sensor name="3D_lidar" type="gpu_ray">
+            <pose>0 0 0 0 0 0</pose>
+            <update_rate>10.0</update_rate>
+            <visualize>false</visualize>
+            <ray>
+                <scan>
+                    <horizontal>
+                        <samples>360.0</samples>
+                        <resolution>1.0</resolution>
+                        <min_angle>${-2*pi/3}</min_angle>
+                        <max_angle>${2*pi/3}</max_angle>
+                    </horizontal>
+                    <vertical>
+                        <samples>180.0</samples>
+                        <resolution>1.0</resolution>
+                        <min_angle>-0.25</min_angle>
+                        <max_angle>1.25</max_angle>
+                    </vertical>
+                </scan>
+                <range>
+                    <min>0.4</min>
+                    <max>5.0</max>
+                    <resolution>0.001</resolution>
+                </range>
+            </ray>
+            <plugin name="laser_3D_plugin" filename="libgazebo_ros_ray_sensor.so">
+                <ros>
+                    <remapping>~/out:=/lidar_3D/scan</remapping>
+                </ros>
+                <update_rate>10.0</update_rate>
+                <output_type>sensor_msgs/PointCloud2</output_type>
+                <frame_name>lidar_3D_link</frame_name>
+            </plugin>
+        </sensor>
+    </gazebo>
+
+    <!-- 2D LIDAR -->
+
+    <gazebo reference="lidar_2D_link">
+        <sensor name="2D_lidar" type="gpu_ray">
+            <pose> 0 0 0 0 0 0 </pose>
+            <update_rate>10.0</update_rate>
+            <visualize>false</visualize>
+            <ray>
+                <scan>
+                    <horizontal>
+                        <samples>720</samples>
+                        <resolution>1</resolution>
+                        <min_angle>-3.14</min_angle>
+                        <max_angle>3.14</max_angle>
+                    </horizontal>
+                </scan>
+                <range>
+                    <min>0.75</min>
+                    <max>15</max>
+                    <resolution>0.01</resolution>
+                </range>
+            </ray>
+            <plugin name="laser_2D_plugin" filename="libgazebo_ros_ray_sensor.so">
+                <ros>
+                    <remapping>~/out:=/scan</remapping>
+                </ros>
+                <update_rate>10.0</update_rate>
+                <output_type>sensor_msgs/LaserScan</output_type>
+                <frame_name>lidar_2D_link</frame_name>
+            </plugin>
+        </sensor>
+    </gazebo>
+
+</robot>
