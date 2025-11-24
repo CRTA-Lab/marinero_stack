@@ -1,0 +1,54 @@
+local_costmap:
+  ros__parameters:
+    global_frame: map
+    robot_base_frame: base_link
+    update_frequency: 5.0
+    publish_frequency: 2.0
+    resolution: 0.5
+    rolling_window: true
+    width: 20.0
+    height: 20.0
+    plugins:
+      - obstacle_layer
+      - inflation_layer
+
+    obstacle_layer:
+      enabled: true
+      max_obstacle_height: 3.0
+      obstacle_range: 10.0
+      raytrace_range: 20.0
+      observation_sources: scan
+      scan:
+        topic: /scan
+        sensor_frame: lidar_link
+        data_type: LaserScan
+        marking: true
+        clearing: true
+
+    inflation_layer:
+      inflation_radius: 1.0
+      cost_scaling_factor: 10.0
+
+global_costmap:
+  ros__parameters:
+    global_frame: map
+    robot_base_frame: base_link
+    update_frequency: 5.0
+    publish_frequency: 2.0
+    resolution: 1.0
+    size_x: 950.0
+    size_y: 500.0
+    origin_x: 0.0
+    origin_y: 0.0
+    plugins:
+      - static_layer
+      - obstacle_layer
+      - inflation_layer
+
+    static_layer:
+      map_subscribe_transient_local: true
+      map_topic: /map
+
+    inflation_layer:
+      inflation_radius: 0.65
+      cost_scaling_factor: 10.0
