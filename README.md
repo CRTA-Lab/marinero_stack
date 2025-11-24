@@ -25,7 +25,7 @@ The stack includes full simulation capabilities in **Gazebo**, **RViz**, and **M
 
 ## Support
 
-For more details, refer to the packages inside the marinero_stack repository.
+For more details, refer to the packages inside the `marinero_stack` repository.
 
 Required LIDAR data and Gazebo models are available on CRTA SharePoint: https://fsbhr.sharepoint.com/:f:/t/crta/IgDjoSHoX-niRbSaTBpjfulSAVM3a0PhhsyRmNpBvphrFP0?e=yFOt1z
 
