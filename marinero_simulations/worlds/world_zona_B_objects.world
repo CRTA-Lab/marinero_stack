@@ -1,0 +1,11 @@
+<?xml version="1.0"?>
+<sdf version="1.6">
+  <world name="world_zona_B_objects">
+
+    <include>
+      <uri>/marinero_simulations/models/world_zona_B_objects</uri>
+    </include>
+
+    <plugin name="factory" filename="libfactory.so"/>
+  </world>
+</sdf>

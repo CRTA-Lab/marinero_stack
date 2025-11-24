@@ -1,0 +1,27 @@
+<?xml version="1.0" ?>
+<robot xmlns:xacro="http://www.ros.org/wiki/xacro" name="marinero"> 
+
+    <xacro:arg name="sim_mode" default="true"/>
+    <xacro:arg name="use_ros2_control" default="true"/>
+    <xacro:arg name="use_4wis4wid" default="true"/>
+
+    <xacro:include filename="materials.xacro" />
+    <xacro:include filename="imu.xacro" />
+    <xacro:include filename="lidar.xacro" />
+    <xacro:include filename="marinero_camera.xacro" />
+
+    <xacro:if value="$(arg use_4wis4wid)">
+        <xacro:include filename="robot_core_4WIS4WID.xacro" />
+    </xacro:if>
+    <xacro:unless value="$(arg use_4wis4wid)">
+        <xacro:include filename="robot_core.xacro" />
+    </xacro:unless>
+
+    <xacro:if value="$(arg use_ros2_control)">
+        <xacro:include filename="ros2_control.xacro" />
+    </xacro:if>
+    <xacro:unless value="$(arg use_ros2_control)">
+        <xacro:include filename="gazebo_control.xacro" />
+    </xacro:unless>
+
+</robot>

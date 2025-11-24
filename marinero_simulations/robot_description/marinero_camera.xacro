@@ -1,0 +1,110 @@
+<?xml version="1.0"?>
+<robot xmlns:xacro="http://www.ros.org/wiki/xacro" name="camera">
+
+    <!-- FRONT CAMERA -->
+
+    <joint name="front_camera_base_joint" type="fixed">
+        <origin xyz="0.502 0 0.069825" rpy="0 0 0" />
+        <parent link="chassis" />
+        <child link="front_camera_link" />
+    </joint>
+
+    <link name="front_camera_link"></link>
+
+    <joint name="front_camera_center" type="fixed">
+        <origin xyz="0 0 0" rpy="0 0 0"/>
+        <parent link="front_camera_link"/>
+        <child link="front_camera_center_link"/>
+    </joint>
+
+    <link name="front_camera_center_link"></link>
+
+    <joint name="front_camera_depth_joint" type="fixed">
+        <origin xyz="0 0 0" rpy="-${pi/2} 0 -${pi/2}"/>
+        <parent link="front_camera_center_link"/>
+        <child link="front_camera_depth_frame"/>
+    </joint>
+
+    <link name="front_camera_depth_frame"></link>
+
+
+    <!-- REAR CAMERA -->
+
+    <joint name="rear_camera_joint" type="fixed">
+        <origin xyz="-0.502 0 0.069825" rpy="0 0 ${pi}" />
+        <parent link="chassis" />
+        <child link="rear_camera_link" />
+    </joint>
+
+    <link name="rear_camera_link"></link>
+
+    <joint name="rear_camera_center" type="fixed">
+        <origin xyz="0 0 0" rpy="0 0 0"/>
+        <parent link="rear_camera_link"/>
+        <child link="rear_camera_center_link"/>
+    </joint>
+
+    <link name="rear_camera_center_link"></link>
+
+    <joint name="rear_camera_depth_joint" type="fixed">
+        <origin xyz="0 0 0" rpy="-${pi/2} 0 -${pi/2}"/>   
+        <parent link="rear_camera_center_link"/>
+        <child link="rear_camera_depth_frame"/>
+    </joint>
+
+    <link name="rear_camera_depth_frame"></link>
+
+
+    <!-- GAZEBO PLUGINS -->
+
+    <gazebo reference="front_camera_center_link">
+        <sensor name="front_depth_camera" type="camera">
+            <update_rate>20</update_rate>
+            <visualize>false</visualize>
+            <camera name="front_cam">
+                <horizontal_fov>1.3962634</horizontal_fov>
+                <image>
+                    <width>640</width>
+                    <height>480</height>
+                    <format>B8G8R8</format>
+                </image>
+                <clip>
+                    <near>0.1</near>
+                    <far>20</far>
+                </clip>
+            </camera>
+            <plugin name="front_camera_controller" filename="libgazebo_ros_camera.so">
+                <frame_name>front_camera_depth_frame</frame_name>
+                <imageTopicName>camera/image_front</imageTopicName>
+                <min_depth>0.1</min_depth>
+                <max_depth>20</max_depth>
+            </plugin>
+        </sensor>
+    </gazebo>
+
+    <gazebo reference="rear_camera_center_link">
+        <sensor name="rear_depth_camera" type="camera">
+            <update_rate>20</update_rate>
+            <visualize>false</visualize>
+            <camera name="rear_cam">
+                <horizontal_fov>1.3962634</horizontal_fov>
+                <image>
+                    <width>640</width>
+                    <height>480</height>
+                    <format>B8G8R8</format>
+                </image>
+                <clip>
+                    <near>0.1</near>
+                    <far>20</far>
+                </clip>
+            </camera>
+            <plugin name="rear_camera_controller" filename="libgazebo_ros_camera.so">
+                <frame_name>rear_camera_depth_frame</frame_name>
+                <imageTopicName>camera/image_rear</imageTopicName>
+                <min_depth>0.1</min_depth>
+                <max_depth>20</max_depth>
+            </plugin>
+        </sensor>
+    </gazebo>
+
+</robot>

@@ -1,0 +1,707 @@
+<?xml version='1.0'?>
+<sdf version='1.7'>
+  <model name="world_zona_A_objects">
+    <static>true</static>
+
+    <include>
+      <uri>/marinero_simulations/models/parking_version_2</uri>
+      <name>parking_0</name>
+      <pose>101.486943 1.055754 1.265 0 0 -3.072</pose>
+    </include>
+
+    <include>
+      <uri>/marinero_simulations/models/parking_version_3</uri>
+      <name>parking_1</name>
+      <pose>100.662942 13.026883 1.265 0 0 -3.072</pose>
+    </include>
+
+    <include>
+      <uri>/marinero_simulations/models/parking_version_1</uri>
+      <name>parking_2</name>
+      <pose>100.249787 27.744212 1.265 0 0 -3.072</pose>
+    </include>
+
+    <include>
+      <uri>/marinero_simulations/models/parking_version_1</uri>
+      <name>parking_3</name>
+      <pose>98.043287 59.461412 1.265 0 0 -3.072</pose>
+    </include>
+
+    <include>
+      <uri>/marinero_simulations/models/parking_version_3</uri>
+      <name>parking_4</name>
+      <pose>96.161742 77.818003 1.265 0 0 -3.072</pose>
+    </include>
+
+    <include>
+      <uri>/marinero_simulations/models/parking_version_2</uri>
+      <name>parking_5</name>
+      <pose>101.486943 1.055754 1.265 0 0 -3.072</pose>
+    </include>
+
+    <include>
+      <uri>/marinero_simulations/models/parking_version_2</uri>
+      <name>parking_6</name>
+      <pose>95.537243 86.819404 1.265 0 0 -3.072</pose>
+    </include>
+
+    <include>
+      <uri>/marinero_simulations/models/parking_version_3</uri>
+      <name>parking_7</name>
+      <pose>94.335842 104.034703 1.265 0 0 -3.072</pose>
+    </include>
+
+    <include>
+      <uri>/marinero_simulations/models/parking_version_3</uri>
+      <name>parking_8</name>
+      <pose>93.506142 115.998503 1.265 0 0 -3.072</pose>
+    </include>
+
+    <include>
+      <uri>/marinero_simulations/models/parking_version_3</uri>
+      <name>parking_9</name>
+      <pose>92.664842 128.095503 1.265 0 0 -3.072</pose>
+    </include>
+
+    <include>
+      <uri>/marinero_simulations/models/parking_version_1</uri>
+      <name>parking_10</name>
+      <pose>91.830926 148.785596 1.265 0 0 -3.072</pose>
+    </include>
+
+    <include>
+      <uri>/marinero_simulations/models/parking_version_2</uri>
+      <name>parking_11</name>
+      <pose>99.065567 169.817154 1.265 0 0 1.608770</pose>
+    </include>
+
+    <include>
+      <uri>/marinero_simulations/models/parking_version_11</uri>
+      <name>parking_12</name>
+      <pose>108.723358 184.226028 1.265 0 0 -3.072</pose>
+    </include>
+
+
+
+    <include>
+      <uri>/marinero_simulations/models/vessel_5</uri>
+      <name>vessel_5_1</name>
+      <pose>81.769600 35.192000 0 0 0 -1.505461</pose>
+    </include>
+
+    <include>
+      <uri>/marinero_simulations/models/vessel_5</uri>
+      <name>vessel_5_2</name>
+      <pose>87.412600 -2.317330 0 0 0 1.633240</pose>
+    </include>
+
+    <include>
+      <uri>/marinero_simulations/models/vessel_5</uri>
+      <name>vessel_5_3</name>
+      <pose>51.031600 32.836500 0 0 0 -1.505461</pose>
+    </include>
+
+    <include>
+      <uri>/marinero_simulations/models/vessel_5</uri>
+      <name>vessel_5_4</name>
+      <pose>2.834260 29.985300 0 0 0 -1.505461</pose>
+    </include>
+
+    <include>
+      <uri>/marinero_simulations/models/vessel_5</uri>
+      <name>vessel_5_5</name>
+      <pose>14.698800 -6.239660 0 0 0 1.633240</pose>
+    </include>
+
+    <include>
+      <uri>/marinero_simulations/models/vessel_5</uri>
+      <name>vessel_5_6</name>
+      <pose>8.484380 -6.489000 0 0 0 1.633240</pose>
+    </include>
+
+    <include>
+      <uri>/marinero_simulations/models/vessel_5</uri>
+      <name>vessel_5_7</name>
+      <pose>-27.082300 -27.795100 0 0 0 -1.505461</pose>
+    </include>
+
+    <include>
+      <uri>/marinero_simulations/models/vessel_5</uri>
+      <name>vessel_5_8</name>
+      <pose>-41.295500 -29.118400 0 0 0 -1.505461</pose>
+    </include>
+
+    <include>
+      <uri>/marinero_simulations/models/vessel_5</uri>
+      <name>vessel_5_9</name>
+      <pose>89.469600 183.980000 0 0 0 1.633240</pose>
+    </include>
+
+
+    <include>
+      <uri>/marinero_simulations/models/catamaran</uri>
+      <name>catamaran_0</name>
+      <pose>43.552600 184.916000 0 0 0 0.042851</pose>
+    </include>
+
+    <include>
+      <uri>/marinero_simulations/models/catamaran</uri>
+      <name>catamaran_1</name>
+      <pose>-2.293010 182.691000 0 0 0 0.042851</pose>
+    </include>
+
+    <include>
+      <uri>/marinero_simulations/models/catamaran</uri>
+      <name>catamaran_2</name>
+      <pose>88.481300 228.335000 0 0 0 1.642491</pose>
+    </include>
+
+    <include>
+      <uri>/marinero_simulations/models/catamaran</uri>
+      <name>catamaran_3</name>
+      <pose>85.157000 279.683000 0 0 0 1.642491</pose>
+    </include>
+
+    <include>
+      <uri>/marinero_simulations/models/catamaran</uri>
+      <name>catamaran_4</name>
+      <pose>-90.294900 146.518000 0 0 0 -3.133471</pose>
+    </include>
+
+    <include>
+      <uri>/marinero_simulations/models/catamaran</uri>
+      <name>catamaran_5</name>
+      <pose>-90.542300 -4.078520 0 0 0 -0.002992</pose>
+    </include>
+
+    <include>
+      <uri>/marinero_simulations/models/catamaran</uri>
+      <name>catamaran_6</name>
+      <pose>85.157000 279.683000 0 0 0 1.642491</pose>
+    </include>
+
+
+
+    <include>
+      <uri>/marinero_simulations/models/sailboat_1</uri>
+      <name>sailboat_1_0</name>
+      <pose>-21.299500 180.013000 0 0 0 0</pose>
+    </include>
+
+    <include>
+      <uri>/marinero_simulations/models/sailboat_1</uri>
+      <name>sailboat_1_1</name>
+      <pose>-9.563950 160.572000 0 0 0 -3.133881</pose>
+    </include>
+
+    <include>
+      <uri>/marinero_simulations/models/sailboat_1</uri>
+      <name>sailboat_1_2</name>
+      <pose>54.640600 163.676000 0 0 0 -3.133881</pose>
+    </include>
+
+    <include>
+      <uri>/marinero_simulations/models/sailboat_1</uri>
+      <name>sailboat_1_3</name>
+      <pose>90.856400 219.638000 0 0 0 1.581901</pose>
+    </include>
+
+    <include>
+      <uri>/marinero_simulations/models/sailboat_1</uri>
+      <name>sailboat_1_4</name>
+      <pose>92.181100 205.663000 0 0 0 1.581901</pose>
+    </include>
+
+    <include>
+      <uri>/marinero_simulations/models/sailboat_1</uri>
+      <name>sailboat_1_5</name>
+      <pose>67.723100 -22.524400 0 0 0 -3.133881</pose>
+    </include>
+
+    <include>
+      <uri>/marinero_simulations/models/sailboat_1</uri>
+      <name>sailboat_1_6</name>
+      <pose>1.796260 -7.144610 0 0 0 0</pose>
+    </include>
+
+    <include>
+      <uri>/marinero_simulations/models/sailboat_1</uri>
+      <name>sailboat_1_7</name>
+      <pose>-5.084820 -7.451020 0 0 0 0</pose>
+    </include>
+
+    <include>
+      <uri>/marinero_simulations/models/sailboat_1</uri>
+      <name>sailboat_1_8</name>
+      <pose>-48.520800 -10.449200 0 0 0 0</pose>
+    </include>
+
+    <include>
+      <uri>/marinero_simulations/models/sailboat_1</uri>
+      <name>sailboat_1_9</name>
+      <pose>87.906300 270.830000 0 0 0 1.581901</pose>
+    </include>
+
+    <include>
+      <uri>/marinero_simulations/models/sailboat_1</uri>
+      <name>sailboat_1_10</name>
+      <pose>53.425600 81.566200 0 0 0 -3.133881</pose>
+    </include>
+
+    <include>
+      <uri>/marinero_simulations/models/sailboat_1</uri>
+      <name>sailboat_1_11</name>
+      <pose>-39.756900 44.973800 0 0 0 0</pose>t
+    </include>
+
+    <include>
+      <uri>/marinero_simulations/models/sailboat_1</uri>
+      <name>sailboat_1_12</name>
+      <pose>-16.315900 77.412100 0 0 0 -3.133881</pose>
+    </include>
+
+
+    <include>
+      <uri>/marinero_simulations/models/yacht_2</uri>
+      <name>yacht_2_0</name>
+      <pose>-54.833100 -10.426500 0 0 0 0.048101</pose>
+    </include>
+
+    <include>
+      <uri>/marinero_simulations/models/yacht_2</uri>
+      <name>yacht_2_1</name>
+      <pose>-17.000000 -8.000000 0 0 0 0.048101</pose>
+    </include>
+
+    <include>
+      <uri>/marinero_simulations/models/yacht_2</uri>
+      <name>yacht_2_2</name>
+      <pose>-11.409300 -7.348880 0 0 0 0.048101</pose>
+    </include>
+
+    <include>
+      <uri>/marinero_simulations/models/yacht_2</uri>
+      <name>yacht_2_3</name>
+      <pose>81.138100 -1.158220 0 0 0 0.048101</pose>
+    </include>
+
+    <include>
+      <uri>/marinero_simulations/models/yacht_2</uri>
+      <name>yacht_2_4</name>
+      <pose>74.874800 -1.759880 0 0 0 0.048101</pose>
+    </include>
+
+    <include>
+      <uri>/marinero_simulations/models/yacht_2</uri>
+      <name>yacht_2_5</name>
+      <pose>68.837100 -2.150760 0 0 0 0.048101</pose>
+    </include>
+
+    <include>
+      <uri>/marinero_simulations/models/yacht_2</uri>
+      <name>yacht_2_6</name>
+      <pose>77.122400 102.360000 0 0 0 0.048101</pose>
+    </include>
+
+    <include>
+      <uri>/marinero_simulations/models/yacht_2</uri>
+      <name>yacht_2_7</name>
+      <pose>59.936400 52.726600 0 0 0 0.048101</pose>
+    </include>
+
+
+
+    <include>
+      <uri>/marinero_simulations/models/yacht_1</uri>
+      <name>yacht_1_0</name>
+      <pose>84.315900 295.361000 0 0 0 -1.494090</pose>
+    </include>
+
+    <include>
+      <uri>/marinero_simulations/models/yacht_1</uri>
+      <name>yacht_1_1</name>
+      <pose>84.649400 288.664000 0 0 0 -1.494090</pose>
+    </include>
+
+    <include>
+      <uri>/marinero_simulations/models/yacht_1</uri>
+      <name>yacht_1_2</name>
+      <pose>88.810700 236.951000 0 0 0 -1.494090</pose>
+    </include>
+
+    <include>
+      <uri>/marinero_simulations/models/yacht_1</uri>
+      <name>yacht_1_3</name>
+      <pose>90.427000 212.669000 0 0 0 -1.494090</pose>
+    </include>
+
+    <include>
+      <uri>/marinero_simulations/models/yacht_1</uri>
+      <name>yacht_1_4</name>
+      <pose>-92.700600 20.925700 0 0 0 3.137771</pose>
+    </include>
+
+    <include>
+      <uri>/marinero_simulations/models/yacht_1</uri>
+      <name>yacht_1_5</name>
+      <pose>-92.700600 99.213600 0 0 0 3.137771</pose>
+    </include>
+
+
+
+    <include>
+      <uri>/marinero_simulations/models/speedboat</uri>
+      <name>speedboat_0</name>
+      <pose>84.741500 182.830000 0 0 0 0.057422</pose>
+    </include>
+
+    <include>
+      <uri>/marinero_simulations/models/speedboat</uri>
+      <name>speedboat_1</name>
+      <pose>80.877500 182.684000 0 0 0 0.057422</pose>
+    </include>
+
+
+
+    <include>
+      <uri>model://bush_1</uri>
+      <name>bush_1_0</name>
+      <pose>99.70 -6.174 1.265 1.570791 0 0</pose>
+    </include>
+
+    <include>
+      <uri>model://bush_1</uri>
+      <name>bush_1_1</name>
+      <pose>95.125 57.8236 1.265 1.570791 0 0</pose>
+    </include>
+
+    <include>
+      <uri>model://bush_1</uri>
+      <name>bush_1_2</name>
+      <pose>92.94 88.3472 1.265 1.570791 0 0</pose>
+    </include>
+
+
+
+    <include>
+      <uri>model://bush_2</uri>
+      <name>bush_2_0</name>
+      <pose>91.789345 171.986237 1.3 1.5708 0 -3.092022</pose>
+    </include>
+
+    <include>
+      <uri>model://bush_2</uri>
+      <name>bush_2_1</name>
+      <pose>94.043335 172.102737 1.3 1.5708 0 -0.852331</pose>
+    </include>
+
+    <include>
+      <uri>model://bush_2</uri>
+      <name>bush_2_2</name>
+      <pose>98.981700 172.332000 1.3 1.5708 0 -3.092022</pose>
+    </include>
+
+    <include>
+      <uri>model://bush_2</uri>
+      <name>bush_2_3</name>
+      <pose>97.60 21.982 1.3 1.5708 0 -1.495215</pose>
+    </include>
+
+    <include>
+      <uri>model://bush_2</uri>
+      <name>bush_2_4</name>
+      <pose>96.8 33.248 1.3 1.5708 0 -1.495210</pose>
+    </include>
+
+    <include>
+      <uri>model://bush_2</uri>
+      <name>bush_2_5</name>
+      <pose>90.7 118.0 1.3 1.5708 0 -1.495210</pose>
+    </include>
+
+    <include>
+      <uri>model://bush_2</uri>
+      <name>bush_2_6</name>
+      <pose>90.60 119.90 1.3 1.5708 0 -1.495210</pose>
+    </include>
+
+    <include>
+      <uri>model://bush_2</uri>
+      <name>bush_2_7</name>
+      <pose>90.5 121.541000 1.3 1.5708 0 -1.495210</pose>
+    </include>
+
+
+
+    <include>
+      <uri>model://bush_3</uri>
+      <name>bush_3_0</name>
+      <pose>98.0 18.595300 1.265 1.570791 0 0</pose>
+    </include>
+
+    <include>
+      <uri>model://bush_3</uri>
+      <name>bush_3_1</name>
+      <pose>96.339600 172.290000 1.265 1.570791 0 0</pose>
+    </include>
+
+    <include>
+      <uri>model://bush_3</uri>
+      <name>bush_3_2</name>
+      <pose>101.483154 172.594391 1.265 1.570791 0 0</pose>
+    </include>
+
+    <include>
+      <uri>model://bush_3</uri>
+      <name>bush_3_3</name>
+      <pose>95.5 53.85 1.265 1.570791 0 0</pose>
+    </include>
+
+    <include>
+      <uri>model://bush_3</uri>
+      <name>bush_3_4</name>
+      <pose>93.85 77.25 1.265 1.570791 0 0</pose>
+    </include>
+
+    <include>
+      <uri>model://bush_3</uri>
+      <name>bush_3_5</name>
+      <pose>93.50 82.190700 1.265 1.570791 0 0</pose>
+    </include>
+
+    <include>
+      <uri>model://bush_3</uri>
+      <name>bush_3_6</name>
+      <pose>93.30 85.199400 1.265 1.570791 0 0</pose>
+    </include>
+
+    <include>
+      <uri>model://bush_3</uri>
+      <name>bush_3_7</name>
+      <pose>92.18 99.5 1.265 1.570791 0 0</pose>
+    </include>
+
+    <include>
+      <uri>model://bush_3</uri>
+      <name>bush_3_8</name>
+      <pose>87.90 158.485000 1.265 1.570791 0 0</pose>
+    </include>
+
+    <include>
+      <uri>model://bush_3</uri>
+      <name>bush_3_9</name>
+      <pose>87.70 161.549000 1.265 1.570791 0 0</pose>
+    </include>
+
+    <include>
+      <uri>model://bush_3</uri>
+      <name>bush_3_10</name>
+      <pose>87.55 164.473000 1.265 1.570791 0 0</pose>
+    </include>
+
+    <include>
+      <uri>model://bush_3</uri>
+      <name>bush_3_11</name>
+      <pose>87.15 167.485000 1.265 1.570791 0 0</pose>
+    </include>
+
+    <include>
+      <uri>model://bush_3</uri>
+      <name>bush_3_12</name>
+      <pose>86.9 170.503000 1.265 1.570791 0 0</pose>
+    </include>
+
+
+
+    <include>
+      <uri>model://tree_5</uri>
+      <name>tree_5_0</name>
+      <pose>95.82 50.0871 1.265 1.570791 0 0</pose>
+    </include>
+
+    <include>
+      <uri>model://tree_5</uri>
+      <name>tree_5_1</name>
+      <pose>91.90 102.90 1.265 1.570791 0 0</pose>
+    </include>
+
+    <include>
+      <uri>model://tree_5</uri>
+      <name>tree_5_2</name>
+      <pose>90.25 126.0 1.265 1.570791 0 0</pose>
+    </include>
+
+    <include>
+      <uri>model://tree_5</uri>
+      <name>tree_5_3</name>
+      <pose>89.90 130.254000 1.265 1.570791 0 0</pose>
+    </include>
+
+    <include>
+      <uri>model://tree_5</uri>
+      <name>tree_5_4</name>
+      <pose>89.20 140.60 1.265 1.570791 0 0</pose>
+    </include>
+
+    <include>
+      <uri>model://tree_5</uri>
+      <name>tree_5_5</name>
+      <pose>88.90 144.70 1.265 1.570791 0 0</pose>
+    </include>
+
+
+
+    <include>
+      <uri>model://tree_7</uri>
+      <name>tree_7_0</name>
+      <pose>99.23 0.16775 1.300000 1.570791 0 0</pose>
+    </include>
+
+
+
+    <include>
+      <uri>model://palm_tree</uri>
+      <name>palm_tree_0</name>
+      <pose>98.23 15.83 1.265000 0 0 0</pose>
+    </include>
+
+    <include>
+      <uri>model://palm_tree</uri>
+      <name>palm_tree_1</name>
+      <pose>94.70 64.617900 1.265000 0 0 0</pose>
+    </include>
+
+    <include>
+      <uri>model://palm_tree</uri>
+      <name>palm_tree_2</name>
+      <pose>93.44 69.3373 1.265000 0 0 0</pose>
+    </include>
+
+
+
+    <include>
+      <uri>model://person_walking</uri>
+      <name>walking_person_0</name>
+      <static>1</static>
+      <pose>97.1 260.584 1.26 0 0 -3.1</pose>
+    </include>
+
+    <include>
+      <uri>model://person_walking</uri>
+      <name>walking_person_1</name>
+      <static>1</static>
+      <pose>99.5646 223.8788 1.26 0 0 0.058576</pose>
+    </include>
+
+    <include>
+      <uri>model://person_walking</uri>
+      <name>walking_person_2</name>
+      <static>1</static>
+      <pose>103.472988 197.280864 1.26 0 0 -3.07</pose>
+    </include>
+
+    <include>
+      <uri>model://person_walking</uri>
+      <name>walking_person_3</name>
+      <static>1</static>
+      <pose>101.546000 197.281994 1.26 0 0 -3.07</pose>
+    </include>
+
+    <include>
+      <uri>model://person_walking</uri>
+      <name>walking_person_4</name>
+      <static>1</static>
+      <pose>104.681995 181.482066 1.26 0 0 -0.041167</pose>
+    </include>
+
+    <include>
+      <uri>model://person_walking</uri>
+      <name>walking_person_5</name>
+      <static>1</static>
+      <pose>84.484 134.15 1.26 0 0 1.65335</pose>
+    </include>
+
+    <include>
+      <uri>model://person_walking</uri>
+      <name>walking_person_6</name>
+      <static>1</static>
+      <pose>88.831037 107.602982 1.26 0 0 -0.034988</pose>
+    </include>
+
+    <include>
+      <uri>model://person_walking</uri>
+      <name>walking_person_7</name>
+      <static>1</static>
+      <pose>-1.46816 39.03785 1.26 0 0 1.682140</pose>
+    </include>
+
+    <include>
+      <uri>model://person_walking</uri>
+      <name>walking_person_8</name>
+      <static>1</static>
+      <pose>-34.179497 -18.013168 1.26 0 0 1.642</pose>
+    </include>
+
+    <include>
+      <uri>model://person_walking</uri>
+      <name>walking_person_9</name>
+      <static>1</static>
+      <pose>60.634501 -12.121763 1.26 0 0 0.53285</pose>
+    </include>
+
+    <include>
+      <uri>model://person_walking</uri>
+      <name>walking_person_10</name>
+      <static>1</static>
+      <pose>93.366724 49.397993 1.26 0 0 0</pose>
+    </include>
+
+    <include>
+      <uri>model://person_walking</uri>
+      <name>walking_person_11</name>
+      <static>1</static>
+      <pose>71.9088 44.2583 1.26 0 0 -1.4958</pose>
+    </include>
+
+
+
+    <include>
+      <uri>/marinero_simulations/models/casual_female</uri>
+      <name>woman_0</name>
+      <pose>3.715090 169.916000 1.26 0 0 1.651829</pose>
+    </include>
+
+    <include>
+      <uri>/marinero_simulations/models/casual_female</uri>
+      <name>woman_1</name>
+      <pose>21.618200 89.911300 1.26 0 0 1.651829</pose>
+    </include>
+
+    <include>
+      <uri>/marinero_simulations/models/casual_female</uri>
+      <name>woman_2</name>
+      <pose>98.4929 265.584 1.26 0 0 0.004628</pose>
+    </include>
+
+    <include>
+      <uri>/marinero_simulations/models/casual_female</uri>
+      <name>woman_3</name>
+      <pose>92.4907 31.5765 1.26 0 0 0</pose>
+    </include>
+
+    <include>
+      <uri>/marinero_simulations/models/casual_female</uri>
+      <name>woman_4</name>
+      <pose>97.5198 -8.1788 1.26 0 0 -3.069</pose>
+    </include>
+
+
+
+    <include>
+      <uri>/marinero_simulations/models/zona_A_ormarici</uri>
+      <name>ormarici_zona_A</name>
+      <pose>-100.0897 -37.535 0 0 0 0</pose>
+    </include>
+
+  </model>
+</sdf>
