@@ -1,0 +1,96 @@
+capture_directory: "~"
+fixed_frame: map
+target_frame: base_link
+fix_orientation: true
+rotate_90: false
+enable_antialiasing: true
+show_displays: false
+show_status_bar: true
+show_capture_tools: true
+window_width: 922
+window_height: 2096
+view_scale: 0.564474702
+offset_x: 98.2006989
+offset_y: -135.776184
+use_latest_transforms: true
+background: "#a0a0a4"
+image_transport: raw
+displays:
+  - type: mapviz_plugins/tile_map
+    name: new display
+    config:
+      visible: true
+      collapsed: true
+      custom_sources:
+        - base_url: http://localhost:8080/wmts/gm_layer/gm_grid/{level}/{x}/{y}.png
+          max_zoom: 19
+          name: Google19
+          type: wmts
+      bing_api_key: ""
+      source: Google19
+  - type: mapviz_plugins/tf_frame
+    name: new display
+    config:
+      visible: true
+      collapsed: true
+      frame: map
+      color: "#00ff00"
+      draw_style: points
+      position_tolerance: 0
+      buffer_size: 0
+      static_arrow_sizes: false
+      arrow_size: 25
+  - type: mapviz_plugins/tf_frame
+    name: new display
+    config:
+      visible: true
+      collapsed: true
+      frame: base_link
+      color: "#e01b24"
+      draw_style: points
+      position_tolerance: 0
+      buffer_size: 0
+      static_arrow_sizes: false
+      arrow_size: 25
+  - type: mapviz_plugins/navsat
+    name: new display
+    config:
+      visible: true
+      collapsed: true
+      topic: /marinero/gps_sensor
+      color: "#f6d32d"
+      draw_style: lines
+      position_tolerance: 1
+      buffer_size: 0
+      qos_depth: 10
+      qos_history: 1
+      qos_reliability: 1
+      qos_durability: 2
+  - type: mapviz_plugins/path
+    name: new display
+    config:
+      visible: true
+      collapsed: true
+      topic: /plan
+      color: "#00ff00"
+      qos_depth: 10
+      qos_history: 1
+      qos_reliability: 1
+      qos_durability: 2
+  - type: mapviz_plugins/pose
+    name: new display
+    config:
+      visible: true
+      collapsed: true
+      topic: /goal_pose
+      color: "#000000"
+      draw_style: points
+      position_tolerance: 0
+      buffer_size: 0
+      show_laps: false
+      static_arrow_sizes: false
+      arrow_size: 25
+      qos_depth: 10
+      qos_history: 1
+      qos_reliability: 1
+      qos_durability: 2
