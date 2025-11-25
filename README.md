@@ -66,3 +66,9 @@ The YAML file used for navigation is specified in `localization_navigation.launc
 This package works together with `marinero_simulations` and `marinero_control` to provide full simulation and autonomous navigation.
 
 Launching `localization_navigation.launch.py` automatically starts the required navigation nodes and integrates with odometry, controllers, and pointcloud visualization.
+
+---
+
+## Support
+
+For support, go to https://github.com/CRTA-Lab/marinero_stack.
