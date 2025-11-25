@@ -123,7 +123,7 @@ If you need access to the full set of models, please contact the email provided 
 
 ## Support
 
-For support, email albert.androsic@fsb.unizg.hr.
+For support, go to https://github.com/CRTA-Lab/marinero_stack.
 
 For additional details, refer to the READMEs in:
 
