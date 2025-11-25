@@ -46,5 +46,10 @@ Any number of coordinates (goals) can be entered. For aborting the mission simpl
 
 Each time the robot arrives at the coordinates it sends a picture on the link: `http://{self.listen_host}:{port}/latest.png")` where `port` is your acssigned port and slef.`listen_host` is the IP address on which your are connected.
 
+---
+
 ## Important 
+
 Before building the workspace, make sure to update the IP address and port in the /tcp_client_package/tcp_client_package/tcp_client_node.py to match your system setup.
+
+For support, go to https://github.com/CRTA-Lab/marinero_stack.
