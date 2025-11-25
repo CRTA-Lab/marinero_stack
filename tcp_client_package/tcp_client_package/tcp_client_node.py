@@ -1,15 +1,12 @@
 #!/usr/bin/env python3
 
 import os
-import io
 import time
 import socket
-import struct
 import threading
 from PIL import Image
 from pathlib import Path
 from http.server import SimpleHTTPRequestHandler, HTTPServer
-from contextlib import suppress
 
 import rclpy
 from rclpy.node import Node

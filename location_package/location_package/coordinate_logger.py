@@ -3,7 +3,6 @@ import rclpy
 from rclpy.node import Node
 from std_msgs.msg import String
 import yaml
-import os
 import time
 
 class CoordinateLogger(Node):
