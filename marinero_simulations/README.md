@@ -117,7 +117,10 @@ The `models` directory contains the Gazebo models used in the simulation.
 **Note**: the project was developed against an older Gazebo simulator version — the models and launch files target that simulator. They should work, but you may encounter compatibility issues on newer Gazebo releases. If you run into problems, try using the simulator version used during development or contact the address in the Support section for help or access to alternate model files.
 
 Due to file size limitations, some of the larger models could not be uploaded to the repository.
-If you need access to the full set of models, please contact the email provided in the `Support` section.
+
+If you need access to the full set of models, please visit the repository linked below to download them.
+
+Once downloaded, replace the `models` folder in this repository with the one you just downloaded.
 
 ---
 
@@ -125,7 +128,7 @@ If you need access to the full set of models, please contact the email provided 
 
 For support, go to https://github.com/CRTA-Lab/marinero_stack.
 
-For additional details, refer to the READMEs in:
+For additional details, refer to the READMEs in: 
 
 - `marinero_control`
 - `marinero_pointclouds`
