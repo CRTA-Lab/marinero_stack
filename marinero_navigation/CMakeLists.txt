@@ -15,10 +15,8 @@ find_package(rclcpp REQUIRED)
 include_directories(include)
 
 install(DIRECTORY
-  include
   config
   launch
-  scripts
   DESTINATION share/${PROJECT_NAME}/
   )
 
